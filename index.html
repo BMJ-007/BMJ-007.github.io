@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            max-width: 500px;
+            margin: 40px auto;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>User Registration</h1>
+
+<input type="text" id="name" placeholder="Name">
+<input type="email" id="email" placeholder="Email">
+
+<button onclick="saveUser()">Register</button>
+
+<h2>Users</h2>
+<ul id="userList"></ul>
+
+<script>
+async function saveUser() {
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+
+    const response = await fetch("/users", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name,
+            email
+        })
+    });
+
+    const data = await response.json();
+
+    alert(data.message);
+
+    loadUsers();
+}
+
+async function loadUsers() {
+
+    const response = await fetch("/users");
+    const users = await response.json();
+
+    const list = document.getElementById("userList");
+
+    list.innerHTML = "";
+
+    users.forEach(user => {
+
+        list.innerHTML += `
+            <li>
+                ${user.name} - ${user.email}
+            </li>
+        `;
+    });
+}
