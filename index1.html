@@ -1,0 +1,121 @@
+      .featured { grid-template-columns:1fr; gap:20px; padding-bottom:49px; }
+      .feature-card { min-height:330px; }
+      .side-stories { gap:12px; }
+      .latest { padding:45px 0 53px; }
+      .latest-grid { grid-template-columns:1fr 1fr; gap:24px 15px; }
+      .post h3 { font-size:19px; }
+      .newsletter { margin-bottom:50px; }
+    }
+    @media(max-width:430px) {
+      .latest-grid { grid-template-columns:1fr; }
+      .post img { aspect-ratio:1.7; }
+      .hero-actions { gap:15px; }
+      .footer-inner { align-items:flex-start; flex-direction:column; }
+      .story { grid-template-columns:100px 1fr; gap:12px; }
+      .story img { width:100px; height:94px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <a class="brand" href="#top" aria-label="Fieldnotes home"><span class="brand-mark">f</span> fieldnotes</a>
+      <nav aria-label="Main navigation">
+        <a href="#stories">Stories</a><a href="#latest">Latest</a><a href="#about">About</a>
+      </nav>
+      <div class="nav-right">
+        <input id="search" class="search" type="search" placeholder="Search stories" aria-label="Search stories">
+        <a class="subscribe-btn" href="#newsletter">Subscribe</a>
+      </div>
+    </div>
+  </header>
+  <main id="top">
+    <section class="wrap hero">
+      <div class="hero-copy">
+        <div class="eyebrow">A journal for curious people</div>
+        <h1>Stories for a slower scroll.</h1>
+        <p>Ideas, places, and small discoveries to help you live a little more thoughtfully. Pull up a chair and stay awhile.</p>
+        <div class="hero-actions"><a class="dark-btn" href="#stories">Explore the journal <span aria-hidden="true">↗</span></a><a class="text-link" href="#about">Our point of view</a></div>
+      </div>
+      <div class="hero-art">
+        <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1200&q=85" alt="Golden morning light falling across a quiet meadow">
+        <span class="art-note">A little room to notice more.</span>
+      </div>
+    </section>
+    <section class="wrap" id="stories">
+      <div class="section-head">
+        <div><div class="eyebrow">The good reads</div><h2>Stories to settle into</h2></div>
+        <div class="filters" role="group" aria-label="Filter stories by category">
+          <button class="filter active" data-filter="all">Everything</button><button class="filter" data-filter="living">Living</button><button class="filter" data-filter="places">Places</button><button class="filter" data-filter="making">Making</button>
+        </div>
+      </div>
+      <div class="featured">
+        <a class="feature-card searchable" data-category="living" data-title="The quiet art of doing one thing at a time" href="#latest">
+          <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1400&q=85" alt="A sunlit neighborhood café with a warm, unhurried atmosphere">
+          <div class="feature-content"><span class="tag">Living · 8 min read</span><h3>The quiet art of doing one thing at a time</h3><span class="meta">By Morgan Ellis &nbsp; · &nbsp; November 12, 2025</span></div>
+        </a>
+        <div class="side-stories">
+          <a class="story searchable" data-category="places" data-title="A weekend with nowhere to be" href="#latest">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=450&q=80" alt="Sunlight filtering through a forest trail">
+            <div><span class="tag">Places</span><h3>A weekend with nowhere to be</h3><span class="meta">6 min read · Nov 08</span></div>
+          </a>
+          <a class="story searchable" data-category="making" data-title="Make a home for your unfinished ideas" href="#latest">
+            <img src="https://images.unsplash.com/photo-1455390582262-044c тоже?auto=format&fit=crop&w=450&q=80" alt="Notebook and pen on a wooden desk">
+            <div><span class="tag">Making</span><h3>Make a home for your unfinished ideas</h3><span class="meta">4 min read · Nov 03</span></div>
+          </a>
+          <a class="story searchable" data-category="living" data-title="The case for a very ordinary walk" href="#latest">
+            <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=450&q=80" alt="Deer standing in a green woodland clearing">
+            <div><span class="tag">Living</span><h3>The case for a very ordinary walk</h3><span class="meta">5 min read · Oct 29</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="latest" id="latest">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">Fresh from the journal</div><h2>Latest stories</h2></div><a class="text-link" href="#stories">Browse the journal ↗</a></div>
+        <div class="latest-grid" id="latest-grid">
+          <article class="post searchable" data-category="making" data-title="A slower way to start the day"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=750&q=80" alt="Coffee being poured into a ceramic cup"><span class="tag">Making</span><h3>A slower way to start the day</h3><p>Small rituals can change the shape of a morning. Here are a few worth keeping.</p><span class="meta">By Jamie Park &nbsp; · &nbsp; 5 min read</span></article>
+          <article class="post searchable" data-category="places" data-title="Postcards from the edge of the map"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=750&q=80" alt="A small cabin beside a calm mountain lake"><span class="tag">Places</span><h3>Postcards from the edge of the map</h3><p>On finding the kind of quiet that follows you home.</p><span class="meta">By Alex Rivera &nbsp; · &nbsp; 7 min read</span></article>
+          <article class="post searchable" data-category="living" data-title="Things we keep, things we let go"><img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=750&q=80" alt="A calm, light-filled room with a simple chair"><span class="tag">Living</span><h3>Things we keep, things we let go</h3><p>A gentle guide to making space for what matters in the everyday.</p><span class="meta">By Morgan Ellis &nbsp; · &nbsp; 6 min read</span></article>
+          <div class="empty" id="empty">No stories found. Try another search or category.</div>
+        </div>
+      </div>
+    </section>
+    <section class="wrap" id="about">
+      <div class="newsletter" id="newsletter">
+        <div class="eyebrow">A note from us to you</div><h2>Make room for good stories.</h2><p>One thoughtful email, every other Sunday. No noise, just the good stuff.</p>
+        <form class="signup" id="signup-form"><input type="email" placeholder="Your email address" aria-label="Your email address" required><button type="submit">Count me in ↗</button></form><div id="signup-message" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><a class="brand" href="#top"><span class="brand-mark">f</span> fieldnotes</a><span>© 2025 Fieldnotes Journal. Made with care.</span><div class="footer-links"><a href="#about">About</a><a href="#newsletter">Contact</a><a href="#top">Instagram</a></div></div></footer>
+  <script>
+    const filters = document.querySelectorAll('.filter');
+    const searchable = document.querySelectorAll('.searchable');
+    const search = document.querySelector('#search');
+    let activeFilter = 'all';
+    function updateStories() {
+      const term = search.value.trim().toLowerCase();
+      let visibleLatest = 0;
+      searchable.forEach(item => {
+        const matchesCategory = activeFilter === 'all' || item.dataset.category === activeFilter;
+        const matchesSearch = !term || item.dataset.title.toLowerCase().includes(term) || item.dataset.category.includes(term);
+        const show = matchesCategory && matchesSearch;
+        item.hidden = !show;
+        if (show && item.classList.contains('post')) visibleLatest++;
+      });
+      document.querySelector('#empty').style.display = visibleLatest ? 'none' : 'block';
+    }
+    filters.forEach(button => button.addEventListener('click', () => {
+      filters.forEach(item => item.classList.remove('active'));
+      button.classList.add('active'); activeFilter = button.dataset.filter; updateStories();
+    }));
+    search.addEventListener('input', updateStories);
+    document.querySelector('#signup-form').addEventListener('submit', event => {
+      event.preventDefault();
+      document.querySelector('#signup-message').textContent = 'Thanks for signing up — watch your inbox for a note from us.';
+      event.currentTarget.reset();
+    });
+  </script>
+</body>
+</html>
